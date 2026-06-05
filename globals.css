@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { background: #f7faf8; color: #10231f; }
+.section { @apply mx-auto max-w-7xl px-6 py-20; }
+.badge { @apply rounded-full border border-white/30 bg-white/15 px-4 py-1 text-sm font-medium backdrop-blur; }
+.card { @apply rounded-3xl bg-white p-7 shadow-soft ring-1 ring-black/5; }
