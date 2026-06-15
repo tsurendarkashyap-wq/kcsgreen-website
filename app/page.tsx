@@ -1,74 +1,285 @@
+const stats = [
+  ["2015", "Founded"],
+  ["100+", "Completed Projects"],
+  ["100 MW+", "Large Project Experience"],
+  ["360°", "Energy Solutions"],
+];
+
 const services = [
-  ['Owner’s Engineering', 'Project feasibility, financial closure support, bid management, vendor finalisation, execution supervision and commissioning support.'],
-  ['Detailed Engineering', 'Solar PV plant design, drawing preparation, BOQ generation, technical analysis and drawing vetting.'],
-  ['Project Management', 'Procurement monitoring, execution coordination, quality checks, liaisoning and schedule control.'],
-  ['Asset Management', 'Generation analysis, O&M supervision, health checks, thermal inspection and IV curve testing.'],
-  ['Power Advisory', 'PPA handling, renewable power sourcing, open access consulting, ROI analysis and agreement vetting.'],
-  ['Electro-Legal Services', 'DISCOM, CEIG and statutory approval support for renewable energy projects.']
+  ["Owner’s Engineering", "Feasibility, vendor selection, execution supervision and commissioning support."],
+  ["Detailed Engineering", "Solar PV design, drawings, BOQ, technical review and design vetting."],
+  ["Project Management", "Procurement monitoring, execution coordination, quality checks and liaisoning."],
+  ["Asset Management", "Generation analysis, O&M supervision, health checks, thermal inspection and IV curve testing."],
+  ["Power Advisory", "PPA support, renewable power sourcing, open access consulting and ROI analysis."],
+  ["Electro-Legal Services", "DISCOM, CEIG and statutory approval support for renewable energy projects."],
 ];
 
 const projects = [
-  ['70 MW', 'Captive Solar Plant', 'Cleantech Solar', 'DPR for four states'],
-  ['50 MW', 'Captive Solar Plant', 'Acciona', 'Load flow study'],
-  ['50 MW', 'Captive Use & Sale', 'Natrinai Green Ventures', 'Design cum project management'],
-  ['40 MW', 'Solar Plant - Myanmar', 'SEA Renewables', 'DPR and preliminary design'],
-  ['25 MW', 'Captive Solar', 'Natrinai Green Energy', 'Design cum project management'],
-  ['12 MW', 'Captive Solar', 'ACG Capsules', 'Owner side engineering']
+  ["70 MW", "Cleantech Solar", "DPR for four states"],
+  ["50 MW", "Natrinai Green Ventures", "Design cum project management"],
+  ["40 MW", "SEA Renewables", "DPR and preliminary design"],
+  ["25 MW", "Natrinai Green Energy", "Design cum project management"],
+  ["12 MW", "ACG Capsules", "Owner side engineering"],
+  ["6 MW", "Adwaith Textiles", "Owner side engineering and project management"],
 ];
 
-const clients = ['Tata Coffee', 'Hatsun', 'Exide Industries', 'Indian Oil Petronas', 'Dalmia Bharat', 'Yokohama', 'ACG Capsules', 'Southern Railway', 'Polyhose Enterprises', 'KLRF Ltd', 'Niswin Foods', 'Shanthi Feeds'];
+const clients = [
+  "Tata Coffee",
+  "Hatsun",
+  "Exide Industries",
+  "Indian Oil Petronas",
+  "Dalmia Bharat",
+  "Yokohama",
+  "ACG Capsules",
+  "Southern Railway",
+  "Polyhose",
+  "KLRF Ltd",
+  "Niswin Foods",
+  "Shanthi Feeds",
+];
 
 export default function Home() {
   return (
-    <main>
-      <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/20 bg-kcsDark/90 text-white backdrop-blur">
+    <main className="bg-[#fffaf0] text-[#1f1f1f]">
+      <div className="bg-[#0b6f2a] text-white">
+        <div className="mx-auto flex max-w-7xl flex-wrap justify-between gap-2 px-6 py-2 text-sm">
+          <span>✉ sales@kcsgreen.com</span>
+          <span>☎ +91 9597426758</span>
+        </div>
+      </div>
+
+      <header className="sticky top-0 z-50 bg-white shadow-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <a href="#home" className="text-lg font-bold tracking-tight">KCS Green Energy Solutions</a>
-          <div className="hidden gap-7 text-sm md:flex">
-            <a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
-          </div>
-        </div>
-      </nav>
+          <a href="#home" className="flex items-center gap-3">
+            <img src="/logo.jpg" alt="KCS Green Energy Solutions" className="h-16 w-auto" />
+          </a>
 
-      <section id="home" className="relative overflow-hidden bg-gradient-to-br from-kcsDark via-kcsGreen to-emerald-600 pt-28 text-white">
-        <div className="absolute -right-24 top-20 h-80 w-80 rounded-full bg-kcsOrange/30 blur-3xl" />
-        <div className="section relative grid items-center gap-12 md:grid-cols-2">
+          <nav className="hidden gap-8 font-medium md:flex">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <a
+            href="#contact"
+            className="rounded-full bg-[#f7941d] px-5 py-3 font-bold text-white shadow-md"
+          >
+            Request Consultation
+          </a>
+        </div>
+      </header>
+
+      <section
+        id="home"
+        className="relative overflow-hidden bg-gradient-to-r from-[#fffaf0] via-white to-[#e9f7ec] px-6 py-20"
+      >
+        <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2">
           <div>
-            <div className="mb-6 flex flex-wrap gap-3"><span className="badge">Engineering</span><span className="badge">Project Management</span><span className="badge">Asset Management</span></div>
-            <h1 className="text-4xl font-black leading-tight md:text-6xl">Solar advisory and renewable energy project expertise.</h1>
-            <p className="mt-6 max-w-xl text-lg text-white/85">End-to-end energy solutions for investors, developers, EPC contractors and industrial consumers, from feasibility and DPR to execution, commissioning and plant health checks.</p>
-            <div className="mt-9 flex flex-wrap gap-4">
-              <a href="#contact" className="rounded-full bg-kcsOrange px-7 py-3 font-bold text-kcsDark shadow-lg">Request Consultation</a>
-              <a href="#projects" className="rounded-full border border-white/40 px-7 py-3 font-bold">View Projects</a>
+            <p className="mb-4 font-bold uppercase tracking-widest text-[#f7941d]">
+              Solar Advisory Services
+            </p>
+
+            <h1 className="text-4xl font-black leading-tight text-[#0b6f2a] md:text-6xl">
+              End-to-End Renewable Energy Solutions
+            </h1>
+
+            <p className="mt-6 max-w-2xl text-lg leading-8">
+              From feasibility and DPR to execution, commissioning and plant health
+              checks — KCS Green Energy Solutions provides reliable renewable energy
+              consulting for investors, EPCs and industrial consumers.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="#contact"
+                className="rounded-full bg-[#0b6f2a] px-7 py-4 font-bold text-white shadow-lg"
+              >
+                Request Consultation
+              </a>
+              <a
+                href="#projects"
+                className="rounded-full border-2 border-[#0b6f2a] px-7 py-4 font-bold text-[#0b6f2a]"
+              >
+                View Projects
+              </a>
             </div>
           </div>
-          <div className="rounded-[2rem] bg-white/12 p-6 shadow-2xl ring-1 ring-white/20">
-            <div className="grid grid-cols-2 gap-4">
-              {[[2015, 'Founded'], ['60+', 'Completed projects'], ['70 MW+', 'Large project experience'], ['360°', 'Energy solutions']].map(([n, l]) => <div key={String(l)} className="rounded-3xl bg-white p-6 text-kcsDark"><div className="text-3xl font-black text-kcsGreen">{n}</div><div className="mt-2 text-sm font-semibold">{l}</div></div>)}
+
+          <div className="rounded-[2rem] bg-[#0b6f2a] p-5 shadow-2xl">
+            <div className="grid gap-5 sm:grid-cols-2">
+              {stats.map(([number, label]) => (
+                <div key={label} className="rounded-3xl bg-white p-8 shadow-md">
+                  <div className="text-4xl font-black text-[#0b6f2a]">{number}</div>
+                  <div className="mt-3 font-semibold">{label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section id="about" className="section">
-        <div className="max-w-3xl"><p className="font-bold uppercase tracking-widest text-kcsOrange">About KCS</p><h2 className="mt-3 text-3xl font-black md:text-5xl">360° renewable energy consulting from Coimbatore.</h2><p className="mt-5 text-lg text-slate-700">KCS Green Energy Solutions provides energy management, design and engineering, project management, asset management and electro-legal services. The firm supports solar and renewable power projects from early-stage feasibility to post-commissioning performance analysis.</p></div>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          <div className="card"><h3 className="text-xl font-black">Er. A.D. Thirumoorthy – Founder</h3><p className="mt-3 text-slate-700">Former Superintending Engineer, TNEB / Coimbatore, Chief Technical Advisor for Indian Wind Power Association and renewable integration committee member in Tamil Nadu.</p></div>
-          <div className="card"><h3 className="text-xl font-black">Er. T. Surendar Kashyap – Co-Founder</h3><p className="mt-3 text-slate-700">Post Graduate in Power Electronics from Anna University with solar experience across tendering, engineering and commissioning at L&T and Mahindra Susten.</p></div>
+      <section id="about" className="px-6 py-20">
+        <div className="mx-auto max-w-7xl">
+          <p className="font-bold uppercase tracking-widest text-[#f7941d]">
+            About KCS
+          </p>
+
+          <h2 className="mt-3 text-3xl font-black text-[#0b6f2a] md:text-5xl">
+            360° Renewable Energy Consulting from Coimbatore
+          </h2>
+
+          <p className="mt-6 max-w-4xl text-lg leading-8">
+            KCS Green Energy Solutions provides energy management, design and
+            engineering, project management, asset management and electro-legal
+            services. The firm supports solar and renewable power projects from
+            early-stage feasibility to post-commissioning performance analysis.
+          </p>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            <div className="rounded-3xl bg-white p-8 shadow-lg">
+              <h3 className="text-2xl font-black text-[#0b6f2a]">
+                Er. A.D. Thirumoorthy – Founder
+              </h3>
+              <p className="mt-4 leading-7">
+                Former Superintending Engineer, TNEB / Coimbatore, Chief Technical
+                Advisor for Indian Wind Power Association and renewable integration
+                committee member in Tamil Nadu.
+              </p>
+            </div>
+
+            <div className="rounded-3xl bg-white p-8 shadow-lg">
+              <h3 className="text-2xl font-black text-[#0b6f2a]">
+                Er. T. Surendar Kashyap – Co-Founder
+              </h3>
+              <p className="mt-4 leading-7">
+                Post Graduate in Power Electronics from Anna University with solar
+                experience across tendering, engineering and commissioning at L&T
+                and Mahindra Susten.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="services" className="bg-white"><div className="section"><p className="font-bold uppercase tracking-widest text-kcsOrange">Services</p><h2 className="mt-3 text-3xl font-black md:text-5xl">Built for EPCs, investors and energy consumers.</h2><div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">{services.map(([t,d]) => <div className="card" key={t}><h3 className="text-xl font-black text-kcsGreen">{t}</h3><p className="mt-3 text-slate-700">{d}</p></div>)}</div></div></section>
+      <section id="services" className="bg-white px-6 py-20">
+        <div className="mx-auto max-w-7xl">
+          <p className="font-bold uppercase tracking-widest text-[#f7941d]">
+            Services
+          </p>
 
-      <section id="capabilities" className="section"><p className="font-bold uppercase tracking-widest text-kcsOrange">Capabilities</p><h2 className="mt-3 text-3xl font-black md:text-5xl">Engineering tools and field testing capability.</h2><div className="mt-8 flex flex-wrap gap-3">{['PVSyst', 'AutoCAD', 'DIALux', 'ETAP', 'STAAD', 'Fluke Thermal Imager', 'Solmetric 1500V / 30A IV Curve Tracer'].map(x => <span key={x} className="rounded-full bg-white px-5 py-3 font-semibold shadow-sm ring-1 ring-black/5">{x}</span>)}</div></section>
+          <h2 className="mt-3 text-3xl font-black text-[#0b6f2a] md:text-5xl">
+            Services for EPCs, Investors and Energy Consumers
+          </h2>
 
-      <section id="projects" className="bg-kcsDark text-white"><div className="section"><p className="font-bold uppercase tracking-widest text-kcsOrange">Project Experience</p><h2 className="mt-3 text-3xl font-black md:text-5xl">Selected completed projects.</h2><div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{projects.map(([cap,type,client,scope]) => <div className="rounded-3xl bg-white/10 p-6 ring-1 ring-white/15" key={client}><div className="text-3xl font-black text-kcsOrange">{cap}</div><h3 className="mt-4 text-xl font-bold">{type}</h3><p className="mt-2 text-white/80">{client}</p><p className="mt-4 text-sm text-white/70">{scope}</p></div>)}</div></div></section>
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {services.map(([title, description]) => (
+              <div
+                key={title}
+                className="rounded-3xl border border-green-100 bg-[#fffaf0] p-8 shadow-md"
+              >
+                <h3 className="text-xl font-black text-[#0b6f2a]">{title}</h3>
+                <p className="mt-4 leading-7">{description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <section className="section"><p className="font-bold uppercase tracking-widest text-kcsOrange">Experience Snapshot</p><h2 className="mt-3 text-3xl font-black md:text-5xl">Trusted across industrial and renewable energy clients.</h2><div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6">{clients.map(c => <div key={c} className="rounded-2xl bg-white p-4 text-center text-sm font-bold shadow-sm ring-1 ring-black/5">{c}</div>)}</div></section>
+      <section id="projects" className="bg-[#0b6f2a] px-6 py-20 text-white">
+        <div className="mx-auto max-w-7xl">
+          <p className="font-bold uppercase tracking-widest text-[#f7941d]">
+            Project Experience
+          </p>
 
-      <section id="contact" className="bg-gradient-to-br from-kcsGreen to-kcsDark text-white"><div className="section grid gap-10 md:grid-cols-2"><div><p className="font-bold uppercase tracking-widest text-kcsOrange">Contact</p><h2 className="mt-3 text-3xl font-black md:text-5xl">Start your renewable energy project with KCS.</h2><p className="mt-6 text-white/80">#64A1, Kashyap House, Aruna Nagar, Nallampalayam, Coimbatore – 641006</p><p className="mt-3 text-white/80">GSTIN: 33ABNPT8547M1ZR</p></div><form className="rounded-3xl bg-white p-6 text-kcsDark shadow-2xl"><div className="grid gap-4"><input placeholder="Name" className="rounded-xl border p-3"/><input placeholder="Company" className="rounded-xl border p-3"/><input placeholder="Email" className="rounded-xl border p-3"/><input placeholder="Phone" className="rounded-xl border p-3"/><textarea placeholder="Project requirement" rows={4} className="rounded-xl border p-3"/><button type="submit" className="rounded-xl bg-kcsOrange px-6 py-3 font-black">Send Enquiry</button></div></form></div></section>
+          <h2 className="mt-3 text-3xl font-black md:text-5xl">
+            Selected Completed Projects
+          </h2>
 
-      <footer className="bg-kcsDark px-6 py-8 text-center text-sm text-white/70">© {new Date().getFullYear()} KCS Green Energy Solutions. All rights reserved.</footer>
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {projects.map(([capacity, client, scope]) => (
+              <div
+                key={client}
+                className="rounded-3xl bg-white/10 p-8 shadow-lg ring-1 ring-white/20"
+              >
+                <div className="text-4xl font-black text-[#f7941d]">
+                  {capacity}
+                </div>
+                <h3 className="mt-4 text-2xl font-bold">{client}</h3>
+                <p className="mt-3 text-white/85">{scope}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-20">
+        <div className="mx-auto max-w-7xl">
+          <p className="font-bold uppercase tracking-widest text-[#f7941d]">
+            Experience Snapshot
+          </p>
+
+          <h2 className="mt-3 text-3xl font-black text-[#0b6f2a] md:text-5xl">
+            Trusted by Industrial and Renewable Energy Clients
+          </h2>
+
+          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6">
+            {clients.map((client) => (
+              <div
+                key={client}
+                className="rounded-2xl bg-white p-5 text-center font-bold shadow-md"
+              >
+                {client}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="bg-[#1f1f1f] px-6 py-20 text-white">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2">
+          <div>
+            <p className="font-bold uppercase tracking-widest text-[#f7941d]">
+              Contact
+            </p>
+
+            <h2 className="mt-3 text-3xl font-black md:text-5xl">
+              Start Your Renewable Energy Project with KCS
+            </h2>
+
+            <div className="mt-8 space-y-4 text-white/85">
+              <p>#64A1, Kashyap House, Aruna Nagar, Nallampalayam, Coimbatore – 641006</p>
+              <p>Email: sales@kcsgreen.com</p>
+              <p>Phone: +91 9597426758</p>
+              <p>GSTIN: 33ABNPT8547M1ZR</p>
+            </div>
+          </div>
+
+          <form className="rounded-3xl bg-white p-8 text-[#1f1f1f] shadow-2xl">
+            <div className="grid gap-4">
+              <input className="rounded-xl border p-4" placeholder="Name" />
+              <input className="rounded-xl border p-4" placeholder="Company" />
+              <input className="rounded-xl border p-4" placeholder="Email" />
+              <input className="rounded-xl border p-4" placeholder="Phone" />
+              <textarea
+                className="rounded-xl border p-4"
+                placeholder="Project requirement"
+                rows={4}
+              />
+              <button
+                type="submit"
+                className="rounded-xl bg-[#f7941d] px-6 py-4 font-black text-white"
+              >
+                Send Enquiry
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <footer className="bg-[#0b6f2a] px-6 py-6 text-center text-sm text-white">
+        © {new Date().getFullYear()} KCS Green Energy Solutions. All rights reserved.
+      </footer>
     </main>
   );
 }
